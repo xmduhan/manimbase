@@ -1,0 +1,13 @@
+# This file records the segment order used by Manim.
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/e79220d115fadb92b62ed49c9777ceaeffe18502d60e9a2959e3f552ea704af2.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/73760ff571a15a2b88539e7e9b3c87ca611d25cea29a9c3b3fd8e462022f2aa0.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/e5412b744bc7d22a5f9f1067b3ef43299e0c6491901fe8fdc92d88599a465903.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/0637ab548009d6b00e36fd8c1cd39fb839038912671c75e508b89ca296c87839.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/c8bda92cdf34f56a68c532ee857a46bda09d8f4f9e944f190f811f8bd888b2c8.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/8486a3f693f3c8ed8cc0ab879abbf84da75381498df41cd3a6982557222283d3.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/fed677a20cf38d3667faddd19d14e9484613c4a40b067f611774670fe391ba18.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/df31a00dc04c55fd12aa135fce5665e5937ffc871d2736181d17b6a11a68b3c3.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/9e7cd32ae381d518df545fda73c5c7d73cffc197c5312eb3d613c91ae4fd2dff.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/4b95f7522a436466c0ac1b49a50c13a87911d3e1a1892e3aa2b49c100072df83.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/aeb5030a37b9fd4d50685bfa60dd579c2c5caed4724f9935c9f018f8776630e3.mp4'
+file 'file:/home/duhongyi/source/manimbase/media/videos/distributive_law/480p15/partial_movie_files/DistributiveLaw/e979bc9f561fb183a97d70858580f606aefc0c4180bdc42f14a205e88283b310.mp4'
