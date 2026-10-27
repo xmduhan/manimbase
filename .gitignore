@@ -1,2 +1,5 @@
 manimbase
 .python-version
+
+# FlyCode files
+.flycode/
