@@ -37,8 +37,11 @@ class DistributiveLaw(Scene):
         caption1 = Text('第1组：两个长方形相邻（共边）', font_size=28, font=FONT)
         caption1.next_to(label_bc1, DOWN, buff=0.3)
 
-        self.play(Create(rect_ab1), Create(rect_ac1), run_time=2.5)
-        self.play(Write(label_a1), Write(label_b1), Write(label_c1), run_time=2.0)
+        self.play(
+            Create(rect_ab1), Create(rect_ac1),
+            Write(label_a1), Write(label_b1), Write(label_c1),
+            run_time=3.0
+        )
         self.play(Write(label_ab1), Write(label_ac1), run_time=2.0)
         self.play(Write(label_bc1), Write(caption1), run_time=2.0)
         self.wait(1.5)
@@ -49,10 +52,19 @@ class DistributiveLaw(Scene):
         group2 = VGroup(rect_ab2, rect_ac2).arrange(RIGHT, buff=gap, aligned_edge=DOWN)
         group2.move_to(np.array([2.5, -0.6, 0]))
 
+        label_a2 = MathTex('a').next_to(rect_ab2, LEFT, buff=0.15)
+        label_b2 = MathTex('b').next_to(rect_ab2, UP, buff=0.1)
+        label_c2 = MathTex('c').next_to(rect_ac2, UP, buff=0.1)
+
         caption2 = Text('第2组：先分开', font_size=28, font=FONT)
         caption2.next_to(group2, DOWN, buff=0.35)
 
-        self.play(Create(rect_ab2), Create(rect_ac2), Write(caption2), run_time=2.5)
+        self.play(
+            Create(rect_ab2), Create(rect_ac2),
+            Write(label_a2), Write(label_b2), Write(label_c2),
+            Write(caption2),
+            run_time=3.0
+        )
         self.wait(1.5)
 
         merged_center = np.array([
@@ -63,8 +75,13 @@ class DistributiveLaw(Scene):
         caption2_new = Text('再慢慢合并', font_size=28, font=FONT)
         caption2_new.move_to(caption2)
 
+        label_c2_target = label_c2.copy().next_to(
+            rect_ac2.copy().move_to(merged_center), UP, buff=0.1
+        )
+
         self.play(
             rect_ac2.animate.move_to(merged_center),
+            label_c2.animate.move_to(label_c2_target),
             Transform(caption2, caption2_new),
             run_time=4.0,
             rate_func=smooth
