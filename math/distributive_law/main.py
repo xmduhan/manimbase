@@ -82,7 +82,7 @@ class DistributiveLaw(Scene):
         self.play(Write(label_bc1), Write(caption1), run_time=2.0)
         self.wait(1.5)
 
-        # 第2组：先分开显示面积，再慢慢合并
+        # 第2组：先分开显示，再合并到与第1组相同
         rect_ab2 = Rectangle(width=b*scale, height=a*scale, color=BLUE, fill_opacity=0.4)
         rect_ac2 = Rectangle(width=c*scale, height=a*scale, color=GREEN, fill_opacity=0.4)
         group2 = VGroup(rect_ab2, rect_ac2).arrange(RIGHT, buff=gap, aligned_edge=DOWN)
@@ -92,13 +92,9 @@ class DistributiveLaw(Scene):
         label_b2 = MathTex('b').next_to(rect_ab2, UP, buff=0.1)
         label_c2 = MathTex('c').next_to(rect_ac2, UP, buff=0.1)
 
-        caption2 = Text('第2组：先分开', font_size=28, font=FONT)
-        caption2.next_to(group2, DOWN, buff=0.35)
-
         self.play(
             Create(rect_ab2), Create(rect_ac2),
             Write(label_a2), Write(label_b2), Write(label_c2),
-            Write(caption2),
             run_time=3.0
         )
         self.wait(1.0)
@@ -114,8 +110,6 @@ class DistributiveLaw(Scene):
             rect_ab2.get_center()[1],
             0
         ])
-        caption2_new = Text('再慢慢合并', font_size=28, font=FONT)
-        caption2_new.move_to(caption2)
 
         label_c2_target = label_c2.copy().next_to(
             rect_ac2.copy().move_to(merged_center), UP, buff=0.1
@@ -125,7 +119,6 @@ class DistributiveLaw(Scene):
             rect_ac2.animate.move_to(merged_center),
             label_ac2.animate.move_to(merged_center),
             label_c2.animate.move_to(label_c2_target),
-            Transform(caption2, caption2_new),
             run_time=4.0,
             rate_func=smooth
         )
