@@ -9,6 +9,42 @@ class DistributiveLaw(Scene):
         title.to_edge(UP)
         self.play(Write(title), run_time=2.0)
 
+        # 开头：展示 a(b+c) 分配到 ab+ac 的过程
+        intro_expr = MathTex('a', '(', 'b', '+', 'c', ')', font_size=56)
+        intro_expr.next_to(title, DOWN, buff=0.5)
+        intro_expr[0].set_color(YELLOW)
+        intro_expr[2].set_color(BLUE)
+        intro_expr[4].set_color(GREEN)
+        self.play(Write(intro_expr), run_time=2.0)
+        self.wait(0.8)
+
+        node_a = MathTex('a', font_size=60, color=YELLOW)
+        node_b = MathTex('b', font_size=60, color=BLUE)
+        node_c = MathTex('c', font_size=60, color=GREEN)
+        node_a.move_to(LEFT * 2.2 + DOWN * 0.8)
+        node_b.move_to(RIGHT * 0.2 + DOWN * 0.2)
+        node_c.move_to(RIGHT * 0.2 + DOWN * 1.4)
+        schematic = VGroup(node_a, node_b, node_c)
+        self.play(Write(schematic), run_time=1.5)
+
+        arrow_b = CurvedArrow(node_a.get_right(), node_b.get_left(), angle=-TAU / 4, color=BLUE)
+        arrow_c = CurvedArrow(node_a.get_right(), node_c.get_left(), angle=TAU / 4, color=GREEN)
+        self.play(Create(arrow_b), Create(arrow_c), run_time=2.5)
+        self.wait(0.8)
+
+        # 视角平移，显示结果
+        intro_group = VGroup(intro_expr, schematic, arrow_b, arrow_c)
+        self.play(intro_group.animate.shift(LEFT * 2.5), run_time=2.0, rate_func=smooth)
+        result = MathTex('=', 'a', 'b', '+', 'a', 'c', font_size=56)
+        result.next_to(intro_expr, RIGHT, buff=0.35)
+        result[1].set_color(YELLOW)
+        result[2].set_color(BLUE)
+        result[4].set_color(YELLOW)
+        result[5].set_color(GREEN)
+        self.play(Write(result), run_time=2.0)
+        self.wait(1.2)
+        self.play(FadeOut(intro_group), FadeOut(result), run_time=1.0)
+
         equation = MathTex('a(b+c)', '=', 'ab', '+', 'ac', font_size=48)
         equation.next_to(title, DOWN, buff=0.5)
         equation[0].set_color(YELLOW)

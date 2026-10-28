@@ -4,3 +4,5 @@
 *.svg
 *.mp4
 *.txt
+*.pyc
+media/
