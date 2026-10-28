@@ -1,5 +1,6 @@
-manimbase
 .python-version
-
-# FlyCode files
 .flycode/
+*.tex
+*.svg
+*.mp4
+*.txt
