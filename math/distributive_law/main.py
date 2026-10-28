@@ -82,7 +82,7 @@ class DistributiveLaw(Scene):
         self.play(Write(label_bc1), Write(caption1), run_time=2.0)
         self.wait(1.5)
 
-        # 第2组：先分开，再慢慢合并
+        # 第2组：先分开显示面积，再慢慢合并
         rect_ab2 = Rectangle(width=b*scale, height=a*scale, color=BLUE, fill_opacity=0.4)
         rect_ac2 = Rectangle(width=c*scale, height=a*scale, color=GREEN, fill_opacity=0.4)
         group2 = VGroup(rect_ab2, rect_ac2).arrange(RIGHT, buff=gap, aligned_edge=DOWN)
@@ -101,6 +101,12 @@ class DistributiveLaw(Scene):
             Write(caption2),
             run_time=3.0
         )
+        self.wait(1.0)
+
+        # 先分别显示两个长方形的面积
+        label_ab2 = MathTex('ab').move_to(rect_ab2.get_center())
+        label_ac2 = MathTex('ac').move_to(rect_ac2.get_center())
+        self.play(Write(label_ab2), Write(label_ac2), run_time=2.0)
         self.wait(1.5)
 
         merged_center = np.array([
@@ -117,6 +123,7 @@ class DistributiveLaw(Scene):
 
         self.play(
             rect_ac2.animate.move_to(merged_center),
+            label_ac2.animate.move_to(merged_center),
             label_c2.animate.move_to(label_c2_target),
             Transform(caption2, caption2_new),
             run_time=4.0,
@@ -124,13 +131,11 @@ class DistributiveLaw(Scene):
         )
         self.wait(1.0)
 
-        label_ab2 = MathTex('ab').move_to(rect_ab2.get_center())
-        label_ac2 = MathTex('ac').move_to(rect_ac2.get_center())
         label_bc2 = MathTex('b+c').next_to(VGroup(rect_ab2, rect_ac2), DOWN, buff=0.2)
         caption3 = Text('合并后：与第1组相同', font_size=28, font=FONT)
         caption3.next_to(label_bc2, DOWN, buff=0.3)
 
-        self.play(Write(label_ab2), Write(label_ac2), Write(label_bc2), run_time=2.0)
+        self.play(Write(label_bc2), run_time=2.0)
         self.play(Write(caption3), run_time=2.0)
         self.wait(3.0)
 
