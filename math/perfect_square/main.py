@@ -116,8 +116,19 @@ class PerfectSquareFormula(Scene):
         label_a_bottom.move_to(origin + np.array([a / 2, -0.28, 0]))
         label_a_left = MathTex('a', font_size=34, color=YELLOW)
         label_a_left.move_to(origin + np.array([-0.28, a / 2, 0]))
+        label_b_bottom = MathTex('b', font_size=34, color=RED)
+        label_b_bottom.move_to(origin + np.array([a - b / 2, -0.28, 0]))
+        label_b_left = MathTex('b', font_size=34, color=RED)
+        label_b_left.move_to(origin + np.array([-0.28, a - b / 2, 0]))
 
-        self.play(Create(big_square), Write(label_a_bottom), Write(label_a_left), run_time=1.2)
+        self.play(
+            Create(big_square),
+            Write(label_a_bottom),
+            Write(label_a_left),
+            Write(label_b_bottom),
+            Write(label_b_left),
+            run_time=1.2
+        )
         self.wait(0.4)
 
         right_strip = Rectangle(width=b, height=a, color=BLUE, fill_opacity=0.55, stroke_width=2)
@@ -182,6 +193,8 @@ class PerfectSquareFormula(Scene):
             FadeOut(big_square),
             FadeOut(label_a_bottom),
             FadeOut(label_a_left),
+            FadeOut(label_b_bottom),
+            FadeOut(label_b_left),
             run_time=1.2
         )
         self.play(FadeIn(remain), Write(remain_label_w), Write(remain_label_h), run_time=1.2)
