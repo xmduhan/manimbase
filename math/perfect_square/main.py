@@ -89,7 +89,7 @@ class PerfectSquareFormula(Scene):
         self.play(Write(note), run_time=0.8)
         self.wait(2.0)
 
-        self.play(FadeOut(VGroup(*self.mobjects)), run_time=0.8)
+        self.play(FadeOut(Group(*self.mobjects)), run_time=0.8)
 
     def show_difference_square(self):
         title = Text('完全平方差公式：面积割补', font_size=42, font=FONT)
@@ -187,4 +187,4 @@ class PerfectSquareFormula(Scene):
         self.play(FadeIn(remain), Write(remain_label_w), Write(remain_label_h), run_time=1.2)
         self.wait(2.0)
 
-        self.play(FadeOut(VGroup(*self.mobjects)), run_time=0.8)
+        self.play(FadeOut(Group(*self.mobjects)), run_time=0.8)
