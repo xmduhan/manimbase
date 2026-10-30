@@ -6,3 +6,4 @@
 *.txt
 *.pyc
 media/
+__pycache__
