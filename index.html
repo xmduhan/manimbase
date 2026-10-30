@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang='zh-CN'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>数学公式可视化视频</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0b1020;
+    --card: #151d35;
+    --text: #eef2ff;
+    --muted: #9aa8c7;
+    --accent: #7dd3fc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #172554 0, var(--bg) 45%);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 20px 24px;
+  }
+  h1 {
+    margin: 0 0 8px;
+    font-size: clamp(28px, 4vw, 44px);
+  }
+  header p {
+    margin: 0;
+    color: var(--muted);
+  }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: color-mix(in srgb, var(--card) 92%, white);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  }
+  .card h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+  }
+  .card p {
+    margin: 0 0 12px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  video {
+    width: 100%;
+    border-radius: 12px;
+    background: #000;
+    aspect-ratio: 16 / 9;
+  }
+  .download {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .download:hover { text-decoration: underline; }
+  footer {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>数学公式可视化视频</h1>
+  <p>Manim 生成的公式演示。编译后可直接在页面播放或下载。</p>
+</header>
+<main>
+  <section class='card'>
+    <h2>完全平方公式</h2>
+    <p>用面积拼图演示完全平方和与完全平方差。</p>
+    <video controls preload='metadata'>
+      <source src='media/math/perfect_square.mp4' type='video/mp4'>
+      您的浏览器不支持 video 标签。
+    </video>
+    <a class='download' href='media/math/perfect_square.mp4' download>下载视频</a>
+  </section>
+  <section class='card'>
+    <h2>平方差公式</h2>
+    <p>通过面积割补展示 a² - b² = (a+b)(a-b)。</p>
+    <video controls preload='metadata'>
+      <source src='media/math/difference_of_squares.mp4' type='video/mp4'>
+      您的浏览器不支持 video 标签。
+    </video>
+    <a class='download' href='media/math/difference_of_squares.mp4' download>下载视频</a>
+  </section>
+  <section class='card'>
+    <h2>乘法分配律</h2>
+    <p>用长方形面积解释 a(b+c)=ab+ac。</p>
+    <video controls preload='metadata'>
+      <source src='media/math/distributive_law.mp4' type='video/mp4'>
+      您的浏览器不支持 video 标签。
+    </video>
+    <a class='download' href='media/math/distributive_law.mp4' download>下载视频</a>
+  </section>
+  <section class='card'>
+    <h2>乘法结合律</h2>
+    <p>用三维体积模型演示 (a×b)×c = a×(b×c)。</p>
+    <video controls preload='metadata'>
+      <source src='media/math/associative_law.mp4' type='video/mp4'>
+      您的浏览器不支持 video 标签。
+    </video>
+    <a class='download' href='media/math/associative_law.mp4' download>下载视频</a>
+  </section>
+</main>
+<footer>视频文件位于 media/math/，由 compile_all.sh 生成。</footer>
+</body>
+</html>
